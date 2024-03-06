@@ -17,10 +17,25 @@ import seedu.address.model.util.SampleDataUtil;
  */
 public class PersonBuilder {
 
+    /**
+     * The constant DEFAULT_NAME.
+     */
     public static final String DEFAULT_NAME = "Alice Pauline";
+    /**
+     * The constant DEFAULT_PHONE.
+     */
     public static final String DEFAULT_PHONE = "85355255";
+    /**
+     * The constant DEFAULT_EMAIL.
+     */
     public static final String DEFAULT_EMAIL = "alice@gmail.com";
+    /**
+     * The constant DEFAULT_ADDRESS.
+     */
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    /**
+     * The constant DEFAULT_REMARK.
+     */
     public static final String DEFAULT_REMARK = "She likes aardvarks.";
 
     private Name name;
@@ -30,6 +45,9 @@ public class PersonBuilder {
     private Remark remark;
     private Set<Tag> tags;
 
+    /**
+     * Instantiates a new Person builder.
+     */
     public PersonBuilder() {
         name = new Name(DEFAULT_NAME);
         phone = new Phone(DEFAULT_PHONE);
@@ -41,6 +59,8 @@ public class PersonBuilder {
 
     /**
      * Initializes the PersonBuilder with the data of {@code personToCopy}.
+     *
+     * @param personToCopy the person to copy
      */
     public PersonBuilder(Person personToCopy) {
         name = personToCopy.getName();
@@ -53,6 +73,9 @@ public class PersonBuilder {
 
     /**
      * Sets the {@code Name} of the {@code Person} that we are building.
+     *
+     * @param name the name
+     * @return the person builder
      */
     public PersonBuilder withName(String name) {
         this.name = new Name(name);
@@ -61,6 +84,9 @@ public class PersonBuilder {
 
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Person} that we are building.
+     *
+     * @param tags the tags
+     * @return the person builder
      */
     public PersonBuilder withTags(String ... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
@@ -69,6 +95,9 @@ public class PersonBuilder {
 
     /**
      * Sets the {@code Address} of the {@code Person} that we are building.
+     *
+     * @param address the address
+     * @return the person builder
      */
     public PersonBuilder withAddress(String address) {
         this.address = new Address(address);
@@ -77,6 +106,9 @@ public class PersonBuilder {
 
     /**
      * Sets the {@code Phone} of the {@code Person} that we are building.
+     *
+     * @param phone the phone
+     * @return the person builder
      */
     public PersonBuilder withPhone(String phone) {
         this.phone = new Phone(phone);
@@ -85,6 +117,9 @@ public class PersonBuilder {
 
     /**
      * Sets the {@code Email} of the {@code Person} that we are building.
+     *
+     * @param email the email
+     * @return the person builder
      */
     public PersonBuilder withEmail(String email) {
         this.email = new Email(email);
@@ -93,14 +128,21 @@ public class PersonBuilder {
 
     /**
      * Sets the {@code Remark} of the {@code Person} that we are building.
+     *
+     * @param remark the remark
+     * @return the person builder
      */
     public PersonBuilder withRemark(String remark) {
         this.remark = new Remark(remark);
         return this;
     }
 
+    /**
+     * Build person.
+     *
+     * @return the person
+     */
     public Person build() {
         return new Person(name, phone, email, address, remark, tags);
     }
-
 }

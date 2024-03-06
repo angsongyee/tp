@@ -23,7 +23,6 @@ public class PersonCard extends UiPart<Region> {
      *
      * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on AddressBook level 4</a>
      */
-
     public final Person person;
 
     @FXML
@@ -43,6 +42,12 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private FlowPane tags;
 
+    /**
+     * Instantiates a new Person card.
+     *
+     * @param person         the person
+     * @param displayedIndex the displayed index
+     */
     public PersonCard(Person person, int displayedIndex) {
         super(FXML);
         this.person = person;
